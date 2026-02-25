@@ -54,17 +54,22 @@ function renderMessages() {
 function generateBotReply(userText) {
   const lowered = userText.toLowerCase();
 
-  if (lowered.includes('idea') || lowered.includes('tool') || lowered.includes('activity')) {
+  if (
+    lowered.includes('idea') ||
+    lowered.includes('tool') ||
+    lowered.includes('focus') ||
+    lowered.includes('classroom')
+  ) {
     return [
-      'Great prompt. Here are several team-building activities that only require paper and a rubber band, and all work well in a video call setting.',
+      'Great prompt. Here are classroom tool concepts that improve focus without making students feel controlled.',
       '',
-      '1) Paper Tower Sprint: Put participants into breakout pairs and give each pair four minutes to build the tallest freestanding paper tower, but they can only touch materials when the facilitator says “go.” Between rounds, teammates must explain one improvement idea before they rebuild. This encourages communication and quick iteration.',
+      '1) Choice-Mode Desk Hub: A small desk device with three student-selected modes (quiet work, collaboration, quick reset). Students pick their mode, and the tool adjusts visual cues and timers accordingly, so support feels self-directed rather than imposed.',
       '',
-      '2) Rubber-Band Launch Lab: Each participant folds a paper target and uses a rubber band launcher to hit it from a fixed distance. Teammates take turns coaching one another on technique, angle, and stability. The team earns points for improvement between attempts, not just raw score.',
+      '2) Focus Quest Board: Students choose from short mission cards (5-10 minutes each), such as “finish two math problems” or “annotate one paragraph.” Completing self-selected missions builds momentum while preserving autonomy.',
       '',
-      '3) Silent Fold Relay: One participant sees a target paper shape and must guide a teammate to recreate it without naming common fold directions directly. This turns into a communication challenge where clarity and trust matter more than speed.',
+      '3) Attention Pulse Check: Every 12 minutes, the tool prompts a one-click reflection (“locked in,” “drifting,” or “need help”). The student sees patterns over time and can choose a strategy card, such as switching task type or using a short movement break.',
       '',
-      'If you want, I can convert one of these into a single polished 300-600 character submission in paragraph form.'
+      'If you want, I can now turn one concept into a polished 300-600 character final submission.'
     ].join('\n');
   }
 
@@ -73,12 +78,12 @@ function generateBotReply(userText) {
       'A strong paragraph format is: one setup sentence, two to three concrete activity examples, and one closing sentence that explains why the approach builds teamwork.',
       '',
       'Example structure:',
-      '- Sentence 1: Introduce the constraint (video call + paper + rubber band).',
-      '- Sentences 2-4: Describe specific activities with clear actions.',
-      '- Sentence 5: Explain outcomes (communication, creativity, collaboration).',
+      '- Sentence 1: State the classroom challenge (focus without restriction).',
+      '- Sentences 2-4: Describe concrete tool features and student choice points.',
+      '- Sentence 5: Explain outcomes (attention, ownership, motivation).',
       '',
       'Draft example:',
-      'Our team-building session can run fully on video conferencing using only paper and a rubber band by rotating through quick collaborative challenges. Teams can do a paper tower sprint where members must explain one design change between rounds, a rubber-band launch challenge where peers coach each other on accuracy, and a silent fold relay that tests instruction clarity. These low-cost activities keep everyone active while strengthening communication, creativity, and trust.'
+      'A classroom Focus Studio tool can improve attention by letting students choose short work modes instead of forcing a single behavior. Students pick a 10-minute mission, set a visual focus timer, and complete a quick self-check before choosing the next mission. Teachers get lightweight progress signals while students keep agency over pace and strategy. This supports consistent focus while preserving freedom and intrinsic motivation.'
     ].join('\n');
   }
 
@@ -95,15 +100,15 @@ function generateBotReply(userText) {
   }
 
   return [
-    'Good direction. To make your response stronger and more distinctive, add three layers of detail.',
+    'Good direction. To make your classroom-tool response stronger, add three concrete layers.',
     '',
-    'Layer 1: Specific activity mechanics. Instead of naming an activity only, describe one rule, one time limit, or one scoring method.',
+    'Layer 1: Feature details. Name exactly what students can do (choose a mode, set a timer, request a hint, track streaks).',
     '',
-    'Layer 2: Collaboration behavior. Explain how teammates interact, such as coaching, role-switching, or collaborative planning between rounds.',
+    'Layer 2: Freedom safeguard. Explain how the tool avoids over-control (student choice, optional prompts, no punitive lockouts).',
     '',
-    'Layer 3: Practical outcome. Close with why this improves team dynamics in remote settings (for example, clearer communication, shared problem-solving, or faster trust-building).',
+    'Layer 3: Measurable impact. Add one outcome teachers can observe (on-task time, assignment completion, reduced redirection).',
     '',
-    'If you share your current draft, I can rewrite it into a high-quality final version while keeping it within the character requirement.'
+    'If you paste your draft, I can rewrite it into a high-quality 300-600 character final version.'
   ].join('\n');
 }
 
