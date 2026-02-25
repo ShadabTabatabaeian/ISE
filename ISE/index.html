@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Idea Study Interface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="study-start">
+        <div class="field-group">
+          <label for="prolific-id">Prolific ID</label>
+          <input id="prolific-id" type="text" placeholder="Enter your Prolific ID to begin..." />
+        </div>
+        <button id="start-study-btn" class="btn btn-primary">Start Study</button>
+      </section>
+
+      <section id="study-content">
+        <section class="task-meta">
+          <strong>Task 1 / 3 · Submission 1 / 5</strong>
+          <span> · Participant: </span>
+          <span id="participant-id">-</span>
+        </section>
+
+        <section id="prompt-card" class="top-card hidden">
+          <h1>Team Building Activity</h1>
+          <blockquote>
+            What are some ways to do teambuilding on video conferencing, with each person only
+            needing a piece of paper and a rubber band?
+          </blockquote>
+          <p>
+            On the left panel, participants chat with the bot. On the right panel, they draft in
+            the sketchpad, copy to final submission, then submit and score.
+          </p>
+        </section>
+
+        <section class="grid-two">
+          <div class="column">
+            <h2>Chat with AI</h2>
+
+            <div class="panel">
+              <span class="badge">Chat</span>
+              <div id="chat-log" class="chat-log"></div>
+            </div>
+
+            <div class="panel">
+              <label class="badge" for="chat-input">Message</label>
+              <textarea id="chat-input" placeholder="Ask anything..."></textarea>
+            </div>
+
+            <div class="button-row">
+              <button id="send-btn" class="btn btn-primary">Send</button>
+              <button id="clear-btn" class="btn btn-secondary">Clear</button>
+            </div>
+          </div>
+
+          <div class="column">
+            <h2>Your Response</h2>
+
+            <div class="panel">
+              <label class="badge" for="sketchpad">Sketchpad (draft your response here)</label>
+              <textarea id="sketchpad" placeholder="Draft your ideas here..."></textarea>
+            </div>
+
+            <button id="copy-btn" class="btn btn-secondary btn-full">Copy to Submission Box</button>
+
+            <div class="panel">
+              <label class="badge" for="final-submission">Final Submission</label>
+              <textarea
+                id="final-submission"
+                placeholder="Your final response goes here (300-600 characters)."
+              ></textarea>
+            </div>
+
+            <button id="submit-score-btn" class="btn btn-primary btn-full">Submit and Score</button>
+
+            <div class="panel">
+              <span class="badge">Status</span>
+              <p id="status-text" class="status-text">Character count: 0 / 600 (minimum 300)</p>
+            </div>
+
+            <div id="score-panel" class="panel score-panel hidden">
+              <div class="score-label-row">
+                <span>0 - Very similar to AI</span>
+                <span>100 - Very different from AI</span>
+              </div>
+              <div class="score-bar">
+                <div id="score-marker" class="score-marker hidden"></div>
+              </div>
+              <div id="score-readout" class="score-readout hidden">
+                <strong>50</strong>
+                <span>Moderately different</span>
+              </div>
+            </div>
+
+            <div class="panel">
+              <h3>Submission History</h3>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Submission</th>
+                      <th>Response Preview</th>
+                      <th>Distinctiveness Score</th>
+                    </tr>
+                  </thead>
+                  <tbody id="history-body">
+                    <tr>
+                      <td colspan="3" class="empty-cell">No submissions yet.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
