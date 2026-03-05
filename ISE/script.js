@@ -33,7 +33,7 @@ function addMessage(role, text) {
 
 function renderMessages() {
   if (!state.messages.length) {
-    chatLog.innerHTML = '<p class="empty-cell">No messages yet. Ask the bot a question.</p>';
+    chatLog.innerHTML = '<p class="empty-cell">Start a conversation with the bot.</p>';
     return;
   }
 
